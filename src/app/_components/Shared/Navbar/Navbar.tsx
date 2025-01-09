@@ -62,20 +62,23 @@ const Navbar = () => {
           </div>
 
           {/* Right side items */}
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Button variant="ghost" className="p-1 rounded-full">
+          <div className="hidden sm:ml-6 sm:flex sm:items-center gap-5">
+            <Button
+              variant="ghost"
+              className="w-8 h-8 rounded-full bg-colorButtonSecondary text-white"
+            >
               <MessageCircle className="h-6 w-6" />
             </Button>
 
             <Avatar className="h-8 w-8 rounded-full">
-              <AvatarImage
-                src="/placeholder.svg?height=32&width=32"
-                alt="User"
-              />
+              <AvatarImage src="https://github.com/shadcn.png" alt="User" />
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
 
-            <Button variant="outline" className="ml-3">
+            <Button
+              variant="outline"
+              className="ml-3 bg-colorButtonSecondary text-white text-base"
+            >
               <LogIn className="mr-2 h-4 w-4" /> Login
             </Button>
           </div>
@@ -161,19 +164,19 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
-          <div className="flex items-center px-5">
+          <div className="flex items-center px-5 gap-6">
             <Avatar className="h-8 w-8 rounded-full">
-              <AvatarImage
-                src="/placeholder.svg?height=32&width=32"
-                alt="User"
-              />
+              <AvatarImage src="https://github.com/shadcn.png" alt="User" />
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
-            <Button variant="ghost" className="ml-auto p-1 rounded-full">
-              <MessageCircle className="h-6 w-6" />
+            <Button
+              variant="ghost"
+              className="w-6 h-6 bg-colorButtonSecondary ml-auto p-1 rounded-full"
+            >
+              <MessageCircle className="h-8 w-8" />
             </Button>
-            <Button variant="outline" className="ml-3">
-              <LogIn className="mr-2 h-4 w-4" /> Login
+            <Button variant="outline" className="ml-3 bg-colorButtonSecondary">
+              <LogIn className="mr-2 h-8 w-8" /> Login
             </Button>
           </div>
         </div>
