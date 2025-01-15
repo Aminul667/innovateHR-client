@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 "use client";
 import { IFormConfig, IFormProps } from "@/types";
 import { FormProvider, useForm } from "react-hook-form";
@@ -26,7 +24,12 @@ const IHForm = ({
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={submitHandler(onSubmit)}>{children}</form>
+      <form
+        onSubmit={submitHandler(onSubmit)}
+        className="flex flex-col gap-4 w-full"
+      >
+        {children}
+      </form>
     </FormProvider>
   );
 };

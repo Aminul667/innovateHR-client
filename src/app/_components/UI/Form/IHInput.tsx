@@ -5,22 +5,33 @@
 import { FloatingInput, FloatingLabel } from "@/components/ui/FlotingInput";
 import { useFormContext } from "react-hook-form";
 
-const IHInput = ({ name, label }: { name: string; label: string }) => {
+const IHInput = ({
+  name,
+  label,
+  type,
+}: {
+  name: string;
+  label?: string;
+  type: string;
+}) => {
   const {
     register,
     formState: { errors },
   } = useFormContext<Record<string, any>>();
 
   return (
-    <div className="relative">
-      <FloatingInput
-        id={name}
-        {...register(name)}
-        placeholder={`Enter ${label}`}
-      />
-      <FloatingLabel htmlFor={name}>{label}</FloatingLabel>
+    <div>
+      <div className="relative">
+        <FloatingInput
+          type={type}
+          id={name}
+          {...register(name)}
+          // placeholder={label}
+        />
+        <FloatingLabel htmlFor={name}>{label}</FloatingLabel>
+      </div>
       {errors[name] && (
-        <p style={{ color: "red" }}>
+        <p className="text-red-500">
           {(errors[name] as { message?: string })?.message}
         </p>
       )}

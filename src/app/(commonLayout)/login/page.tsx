@@ -14,11 +14,11 @@ const page = () => {
   };
 
   return (
-    <div>
+    <div className="w-[600px] h-full m-auto flex items-center justify-center">
       <IHForm onSubmit={onSubmit} resolver={zodResolver(loginSchema)}>
-        <IHInput name="email" label="Enter your email" />
-        <IHInput name="password" label="Password" />
-        <Button type="submit">Submit</Button>
+        <IHInput name="email" label="Enter your email" type="text" />
+        <IHInput name="password" label="Password" type="Enter Your Password" />
+        <Button type="submit">Login</Button>
       </IHForm>
     </div>
   );
