@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import Navbar from "../_components/Shared/Navbar/Navbar";
-// import IHSidebar from "../_components/UI/Sidebar/IHSidebar";
-// import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import IHSidebar from "../_components/UI/Sidebar/IHSidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -11,20 +11,17 @@ export const metadata: Metadata = {
 
 const CommonLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
-    <>
-      {/* <SidebarProvider>
-        <IHSidebar />
-        <SidebarTrigger />
-      </SidebarProvider> */}
-      <div>
+    <SidebarProvider>
+      <IHSidebar />
+      <div className="w-full">
         <Navbar />
-
+        {/* <SidebarTrigger /> */}
         {children}
         <div>
           <h2>Footer</h2>
         </div>
       </div>
-    </>
+    </SidebarProvider>
   );
 };
 
