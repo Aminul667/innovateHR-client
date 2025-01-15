@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="flex items-center">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 flex items-center mr-4">
-              <span className="text-xl font-bold">Logo</span>
+              <span className="text-xl font-bold">InnovateHR</span>
             </Link>
 
             {/* Left side navigation items */}
@@ -75,12 +75,14 @@ const Navbar = () => {
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
 
-            <Button
-              variant="outline"
-              className="ml-3 bg-colorButtonSecondary text-white text-base"
-            >
-              <LogIn className="mr-2 h-4 w-4" /> Login
-            </Button>
+            <Link href="/login">
+              <Button
+                variant="outline"
+                className="ml-3 bg-colorButtonSecondary text-white text-base"
+              >
+                <LogIn className="mr-2 h-4 w-4" /> Login
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
