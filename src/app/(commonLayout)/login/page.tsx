@@ -16,7 +16,8 @@ const page = () => {
   return (
     <div>
       <IHForm onSubmit={onSubmit} resolver={zodResolver(loginSchema)}>
-        <IHInput name="Email" label="Enter your email" />
+        <IHInput name="email" label="Enter your email" />
+        <IHInput name="password" label="Password" />
         <Button type="submit">Submit</Button>
       </IHForm>
     </div>
