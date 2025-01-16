@@ -22,12 +22,7 @@ const IHInput = ({
   return (
     <div>
       <div className="relative">
-        <FloatingInput
-          type={type}
-          id={name}
-          {...register(name)}
-          // placeholder={label}
-        />
+        <FloatingInput type={type} id={name} {...register(name)} />
         <FloatingLabel htmlFor={name}>{label}</FloatingLabel>
       </div>
       {errors[name] && (
