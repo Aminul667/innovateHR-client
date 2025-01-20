@@ -34,7 +34,8 @@ const AdminHome = () => {
         <div className="aspect-video rounded-xl bg-muted/50 bg-slate-500" /> */}
       </div>
       {/* <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min bg-slate-500" /> */}
-      <div className="bg-colorBG shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)] rounded-xl">
+      <div className="bg-colorBG shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)] rounded-xl p-8">
+        <h2 className="text-3xl font-semibold mb-4">Recent Requests</h2>
         <AdminTable />
       </div>
     </div>

@@ -6,9 +6,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import React from "react";
+import Modal from "../UI/Modal";
 
 const DashboardNavbar = () => {
   return (
@@ -23,7 +26,15 @@ const DashboardNavbar = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator className="hidden md:block" />
             <BreadcrumbItem>
-              <BreadcrumbPage>Add a navigation bar here</BreadcrumbPage>
+              <BreadcrumbPage>
+                {/* dialog box */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button>Add Employee</Button>
+                  </DialogTrigger>
+                  <Modal />
+                </Dialog>
+              </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
