@@ -2,11 +2,15 @@
 
 import { SidebarProvider } from "@/components/ui/sidebar";
 import React from "react";
+import { AppSidebar } from "../../components/adminDashboardNavbar/app-sidebar";
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section>
-      <SidebarProvider>{children}</SidebarProvider>
+      <SidebarProvider>
+        <AppSidebar />
+        {children}
+      </SidebarProvider>
     </section>
   );
 };
