@@ -17,13 +17,10 @@ import {
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarRail,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { NavMain } from "./nav-main";
 import { NavProjects } from "./nav-projects";
-import { NavUser } from "./nav-user";
 
 // This is sample data.
 const data = {
@@ -158,15 +155,12 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>Logo</SidebarHeader>
+      {/* <SidebarHeader>Logo</SidebarHeader> */}
+      <SidebarTrigger className="ml-2" />
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser user={data.user} />
-      </SidebarFooter>
-      <SidebarRail />
     </Sidebar>
   );
 }

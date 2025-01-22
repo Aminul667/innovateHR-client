@@ -1,45 +1,71 @@
+"use client";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { Separator } from "@/components/ui/separator";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { BadgeHelp, BellDot } from "lucide-react";
 import React from "react";
-import Modal from "../UI/Modal";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const DashboardNavbar = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    console.log(data);
+  };
+
   return (
-    <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-      <div className="flex items-center gap-2 px-4">
-        <SidebarTrigger className="-ml-1" />
-        <Separator orientation="vertical" className="mr-2 h-4" />
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">Navigate</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="hidden md:block" />
-            <BreadcrumbItem>
-              <BreadcrumbPage>
-                {/* dialog box */}
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button>Add Employee</Button>
-                  </DialogTrigger>
-                  <Modal />
-                </Dialog>
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+    <nav className="h-20 flex items-center justify-between px-5">
+      <div className="flex items-center gap-16">
+        <h2 className="text-4xl font-semibold">InnovateHR</h2>
+        {/* form */}
+        <form
+          className="font-inter my-8 w-[500px]"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className="relative flex items-center w-full">
+            <input
+              type="text"
+              {...register("employee", {
+                required: "Please enter your employee name",
+              })}
+              placeholder="Search for employees"
+              className="h-12 w-full py-4 pl-4 pr-44 rounded-3xl border border-black"
+            />
+            <button
+              type="submit"
+              className="absolute right-0 bg-colorButtonSecondary h-10 rounded-3xl px-7 py-4 flex items-center mr-1 font-semibold hover:bg-gray-500"
+            >
+              Search
+            </button>
+          </div>
+        </form>
       </div>
-    </header>
+      <div className="flex items-center justify-center gap-4">
+        <BadgeHelp size={42} color="#4B93E7" />
+        <BellDot size={42} color="#4B93E7" />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Avatar className="cursor-pointer">
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-36">
+            <DropdownMenuGroup>
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Setting</DropdownMenuItem>
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </nav>
   );
 };
 
