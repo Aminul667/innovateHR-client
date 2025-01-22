@@ -14,10 +14,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { TOptions } from "@/types";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-
 import { useEffect, useState } from "react";
+
+const options: TOptions[] = [
+  { value: "management", select: "Management" },
+  { value: "developer", select: "Developer" },
+  { value: "data-scientist", select: "Data Scientist" },
+];
 
 const AbsenceFilter = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
@@ -43,32 +49,22 @@ const AbsenceFilter = () => {
   }, [selectedOption, selectedDate]);
 
   return (
-    <>
-      <div>
-        <label
-          htmlFor="option-select"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
-          Select an option
-        </label>
+    <div className="flex gap-5 mt-5">
+      <div className="w-[200px]">
         <Select onValueChange={setSelectedOption} value={selectedOption}>
           <SelectTrigger id="option-select">
-            <SelectValue placeholder="Select an option" />
+            <SelectValue placeholder="Select team" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="option1">Option 1</SelectItem>
-            <SelectItem value="option2">Option 2</SelectItem>
-            <SelectItem value="option3">Option 3</SelectItem>
+            {options.map((item) => (
+              <SelectItem key={item.value} value={item.value}>
+                {item.select}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>
       <div>
-        <label
-          htmlFor="date-picker"
-          className="block text-sm font-medium text-gray-700 mb-1"
-        >
-          Select a date
-        </label>
         <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -96,7 +92,7 @@ const AbsenceFilter = () => {
           </PopoverContent>
         </Popover>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -19,3 +19,8 @@ export interface IFormProps extends IFormConfig {
   children: ReactNode;
   onSubmit: SubmitHandler<any>;
 }
+
+export type TOptions = {
+  value: string;
+  select: string;
+};
