@@ -13,7 +13,7 @@ export default {
       colors: {
         colorButtonPrimary: "#F7AC25",
         colorButtonSecondary: "#4B93E7",
-        colorBG: "#E8F6E3",
+        colorBG: "#EEF1F3",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
