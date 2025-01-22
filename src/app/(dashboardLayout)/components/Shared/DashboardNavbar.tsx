@@ -20,7 +20,7 @@ const DashboardNavbar = () => {
   };
 
   return (
-    <nav className="h-20 flex items-center justify-between px-5">
+    <nav className="h-20 flex items-center justify-between px-5 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
       <div className="flex items-center gap-16">
         <h2 className="text-4xl font-semibold">InnovateHR</h2>
         {/* form */}
