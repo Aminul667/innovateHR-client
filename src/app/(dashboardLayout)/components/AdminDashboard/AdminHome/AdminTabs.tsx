@@ -26,8 +26,8 @@ const AdminTabs = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="status">Change your password here.</TabsContent>
-        <TabsContent value="shift">Change your password here.</TabsContent>
+        <TabsContent value="status">Status will be here</TabsContent>
+        <TabsContent value="shift">Shift will be here</TabsContent>
       </Tabs>
     </div>
   );

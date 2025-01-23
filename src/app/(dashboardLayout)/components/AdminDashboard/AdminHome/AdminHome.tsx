@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import AdminTabs from "./AdminTabs";
+import AdminSummary from "./AdminSummary";
 
 const AdminHome = () => {
   return (
@@ -16,7 +17,9 @@ const AdminHome = () => {
           <AdminTabs />
         </div>
         {/* my summary */}
-        <div className="w-full h-24 bg-blue-600 rounded-xl"></div>
+        <div className="w-full rounded-xl px-5 py-6 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
+          <AdminSummary />
+        </div>
       </div>
     </section>
   );
