@@ -23,8 +23,8 @@ const AdminHome = () => {
         </div>
       </section>
 
-      {/* news and events*/}
       <section className="grid grid-rows-1 grid-cols-3 gap-5 mt-5">
+        {/* news and events*/}
         <div className="rounded-xl px-5 py-6 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
           <h2 className="text-3xl font-semibold">News & Events</h2>
           <Separator className="my-5" />
@@ -32,7 +32,11 @@ const AdminHome = () => {
             <AdminNews />
           </div>
         </div>
-        <div className="bg-blue-600 rounded-xl col-span-2"></div>
+        {/* recent activities */}
+        <div className="px-5 py-6 rounded-xl col-span-2 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
+          <h2 className="text-3xl font-semibold">Recent application</h2>
+          <Separator className="my-5" />
+        </div>
       </section>
     </section>
   );
