@@ -2,11 +2,12 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import AdminTabs from "./AdminTabs";
 import AdminSummary from "./AdminSummary";
+import AdminNews from "./AdminNews";
 
 const AdminHome = () => {
   return (
     <section className="mt-5 px-5">
-      <div className="grid grid-rows-1 grid-cols-3 gap-5">
+      <section className="grid grid-rows-1 grid-cols-3 gap-5">
         {/* employee dashboard */}
         <div className="w-full  rounded-xl col-span-2 px-5 py-6 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
           <div className="flex justify-between">
@@ -20,7 +21,19 @@ const AdminHome = () => {
         <div className="w-full rounded-xl px-5 py-6 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
           <AdminSummary />
         </div>
-      </div>
+      </section>
+
+      {/* news and events*/}
+      <section className="grid grid-rows-1 grid-cols-3 gap-5 mt-5">
+        <div className="rounded-xl px-5 py-6 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
+          <h2 className="text-3xl font-semibold">News & Events</h2>
+          <Separator className="my-5" />
+          <div>
+            <AdminNews />
+          </div>
+        </div>
+        <div className="bg-blue-600 rounded-xl col-span-2"></div>
+      </section>
     </section>
   );
 };
