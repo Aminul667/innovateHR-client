@@ -2,6 +2,7 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tabs } from "@radix-ui/react-tabs";
+import AdminTable from "./AdminTable";
 
 const AdminSummary = () => {
   const today = new Date();
@@ -26,10 +27,10 @@ const AdminSummary = () => {
           <div>
             <h3 className="text-xl font-semibold mb-3">Annual leave</h3>
             <p>
-              <span className="font-semibold">12 days</span> remaining
+              Days available: <span className="font-semibold">12</span>
             </p>
             <p>
-              <span className="font-semibold">20 days</span> allowance
+              Total allowance: <span className="font-semibold">20</span>
             </p>
           </div>
           <div className="my-5">
@@ -45,7 +46,9 @@ const AdminSummary = () => {
           </div>
         </TabsContent>
         <TabsContent value="Overtime">Overtime will be here</TabsContent>
-        <TabsContent value="E-learning">E-learning will be here</TabsContent>
+        <TabsContent value="E-learning">
+          <AdminTable />
+        </TabsContent>
       </Tabs>
     </div>
   );
