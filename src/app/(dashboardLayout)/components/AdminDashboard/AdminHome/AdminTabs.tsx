@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AbsenceFilter from "./AbsenceFilter";
 import AbsentIndicator from "./AbsentIndicator";
 import AdminCarousel from "./AdminCarousel";
+import AdminOnShift from "./AdminOnShift";
 
 const AdminTabs = () => {
   return (
@@ -27,7 +28,9 @@ const AdminTabs = () => {
           </div>
         </TabsContent>
         <TabsContent value="status">Status will be here</TabsContent>
-        <TabsContent value="shift">Shift will be here</TabsContent>
+        <TabsContent value="shift">
+          <AdminOnShift />
+        </TabsContent>
       </Tabs>
     </div>
   );
