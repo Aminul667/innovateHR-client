@@ -11,7 +11,7 @@ const AdminHome = () => {
         {/* employee dashboard */}
         <div className="w-full  rounded-xl col-span-2 px-5 py-6 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
           <div className="flex justify-between">
-            <h2 className="text-3xl font-semibold">Employee dashboard</h2>
+            <h2 className="text-3xl font-semibold">Manager dashboard</h2>
             <Badge className="text-base">2 pending absences</Badge>
           </div>
           <Separator className="my-5" />
