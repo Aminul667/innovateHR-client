@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import {
+  HousePlug,
   History,
   FolderOpen,
   BookOpen,
@@ -22,6 +23,11 @@ import { NavProjects } from "./nav-projects";
 // This is sample data.
 const data = {
   projects: [
+    {
+      name: "Home",
+      url: "/admin-dashboard",
+      icon: HousePlug,
+    },
     {
       name: "Rota",
       url: "/admin-dashboard/employee-rota",
