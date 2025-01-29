@@ -20,7 +20,7 @@ const users = [
     avatar:
       "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
     role: "Admin",
-    status: "Accepted",
+    status: "9:00AM - 5:00PM",
   },
   {
     id: 2,
@@ -28,14 +28,14 @@ const users = [
     avatar:
       "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
     role: "Data Scientist",
-    status: "Pending",
+    status: "11:00AM - 7:00PM",
   },
   {
     id: 3,
     name: "Charlie Brown",
     avatar: "/placeholder.svg?height=40&width=40",
     role: "IT Developer",
-    status: "Accepted",
+    status: "9:00AM - 5:00PM",
   },
   {
     id: 4,
@@ -43,14 +43,14 @@ const users = [
     avatar:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29uJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D",
     role: "Backend Developer",
-    status: "Accepted",
+    status: "9:00AM - 5:00PM",
   },
   {
     id: 5,
     name: "Ethan Hunt",
     avatar: "/placeholder.svg?height=40&width=40",
     role: "Product Manager",
-    status: "Pending",
+    status: "9:00AM - 5:00PM",
   },
 ];
 
@@ -92,7 +92,7 @@ const AdminOnShift = () => {
             className="cursor-pointer"
             onClick={() => toggleSort("status")}
           >
-            Action{" "}
+            On Shift{" "}
             {sortColumn === "status" && (sortDirection === "asc" ? "▲" : "▼")}
           </TableHead>
         </TableRow>
@@ -122,13 +122,7 @@ const AdminOnShift = () => {
             {/* <TableCell className="font-medium">{user.name}</TableCell> */}
             <TableCell>{user.role}</TableCell>
             <TableCell>
-              <Badge
-                variant={
-                  user.status === "Accepted" ? "secondary" : "destructive"
-                }
-              >
-                {user.status}
-              </Badge>
+              <Badge>{user.status}</Badge>
             </TableCell>
           </TableRow>
         ))}
