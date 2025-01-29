@@ -17,7 +17,6 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { NavProjects } from "./nav-projects";
-import { NavMain } from "./nav-main";
 
 // This is sample data.
 const data = {
